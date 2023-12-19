@@ -1,0 +1,18 @@
+{
+  "name": "simpwill-openapi-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./build/index.js",
+  "typings": "./build/index.d.ts",
+  "scripts": {
+    "build": "npx tsc",
+    "postinstall": "npm run build",
+    "generate-api": "rm -rf src && openapi-generator-cli generate -i https://alpha.dev-api.simpwill.co.uk/docs/api-docs.json -g typescript-fetch -t openapi-generator-templates/ -o src --additional-properties=typescriptThreePlus=true;generateAliasAsModel=true"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^16.11.11",
+    "typescript": "^4.5.2"
+  }
+}
